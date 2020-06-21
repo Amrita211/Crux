@@ -75,29 +75,13 @@ public class AVLTree {
     return x;
     }
 
-    // isbalance
-    public boolean isBalance(){
-        return isBalance(root);
-    }
-    public boolean isBalance(Node node){
-        if(node==null){
-            return true;
-        }
-        int diff = Math.abs(height(node.left)-height(node.right));
-        if(diff>1){
-            return false;
-        }
-        boolean left = isBalance(node.left);
-        boolean right = isBalance(node.right);
-        return left && right;
-    }
     public int height(Node node){
         if(node==null){
             return 0;
         }
         return node.height;
     }
-    // display
+    // display [preorder display]
     public void display(){
         display(root," ");
     }
